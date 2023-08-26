@@ -1,5 +1,6 @@
 # Algorithms and Data Structures
 
+NeetCode video to watch: https://www.youtube.com/watch?v=0K_eZGS5NsU
 ## Contains Duplicate
 
 **Given an integer array nums, return true if any value appears at least twice, and return false if every element is distinct**
@@ -48,4 +49,23 @@ countS.get(s[i], 0) // this 'gets' the value of the key s[i] - the ith character
 sorted(s) // just returning the equation of these is a valid solution
 
 ```
+
+## Two Sum
+
+**Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.**
+
+Initial thought process:
+
+At first I thought of using a hashmap, but then realised that it would be difficult to keep track of the indices of the numbers - considered using tuples as the key, which would have the indices of the two numbers summed.
+
+
+Notes for future:
+
+The solution is to use a one pass solution, where for each number in the array, we search for the complement, being the target minus the number. We step through each value in the list provided, and check if `target-nums[i]` is present in the hashmap, returning the index at which it is, and the index of the current number if so, otherwise we add the current number to the hashmap. This question states that the two values will definitely be present in the hashmap, so we do not need to return anything if no pairs are present.
+
+
+
+
+
+
 
