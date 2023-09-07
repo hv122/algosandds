@@ -64,6 +64,17 @@ Notes for future:
 The solution is to use a one pass solution, where for each number in the array, we search for the complement, being the target minus the number. We step through each value in the list provided, and check if `target-nums[i]` is present in the hashmap, returning the index at which it is, and the index of the current number if so, otherwise we add the current number to the hashmap. This question states that the two values will definitely be present in the hashmap, so we do not need to return anything if no pairs are present.
 
 
+## Group Anagrams
+
+**Given an array of strings strs, group the anagrams together. You can return the answer in any order.**
+
+Initial thought process:
+
+This will use a similar ideology to the valid anagram problem, however requires you to check every value in the list/array strs. Take the algorithm from the initial solution, and wrap it in an iterator to move through each value in the list. Add the first value to a list, then compare it to each value in strs, using a set .
+
+Notes for future:
+
+
 
 
 
