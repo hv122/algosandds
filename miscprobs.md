@@ -74,7 +74,35 @@ This will use a similar ideology to the valid anagram problem, however requires 
 
 Notes for future:
 
+Use the fact that the character will all be lowercase, so there are only 26 possible characters (a-z). This means we can use a hashmap called count, which stores the number of occurrences of each character in each string. Now we know that if the keys of the maps match, the strings can be made the values corresponding to the keys.
 
+The hashmap:
+
+```
+    res =  defaultdict(list) # mapping charCount to a list of anagrams
+
+    ord(c) # this takes the ASCII value of the character input
+
+```
+
+Remember that lists cannot be keys as they are mutable, so when assiging the list 'count' to a key, convert it to a tuple.
+
+## Top K Frequent Elements
+
+**Given an integer array nums, and an integer k, return the k most frequent elements. You may return the answer in any order.**
+
+Initial thought process:
+
+Use a hashmap to store the integer in the array nums as the key, and the number of occurrences as it's value. Sort the map by values (in descending order) and return the top k most frequent using a loop.
+
+Notes for future:
+
+Use a max heap, then pop k number of values from the heap. We use a bucket sort, and reverse the logic of the hashmap as I initally thought, where the key is used as the count, and the value is the integer that occurs *key* times. The hashmap is the same length as the input array, as that is the maximum number of times a value can occur. When constructing the output array, just iterate throught the count hashmap in reverse, in order to take the top k values.
+
+```
+    freq = [[] for i in range(len(nums) + 1)] # construct an array that is the same length as the input array, that stores an array in each index, which is a list of the integers that occur i (index) number of times.
+
+```
 
 
 
