@@ -110,6 +110,8 @@ Use a max heap, then pop k number of values from the heap. We use a bucket sort,
 
 ## Product of Array Except Self
 
+**Given an integer array `nums`, return an array `answer` such that `answer[i]` is equal to the product of all the elements of `nums` except `nums[i]`**
+
 Initial thought process:
 
 Use a hashmap, with keys being the index of the array, and the value being the product of all the values, except the index.
@@ -117,6 +119,27 @@ Use a hashmap, with keys being the index of the array, and the value being the p
 Notes for future:
 
 We take the product of every value before the index chosen, and every value after it, then take their products. To do this, we make an output array, which includes the product of everything ahead of the index multiplied by the product of everything ahead of the index.
+
+## Valid Sudoku
+
+**Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated**
+
+Initial thought process:
+
+Iterate through each row, column and 3 by 3 grid, using a hashset as we did in the *Contains Duplicate* problem.
+
+Notes for future:
+
+The initial thought process in this case is correct, but what we need to do is flesh out the iterative process properly. We apply indices to each 3 by 3 grid as 0, 1 and 2. We use integer division on the actual co-ordinate of each square, to find which 3 by 3 square that square lies in. We can then use said knowledge to decide whether there is a repeat in the 3 by 3 subsquare.
+
+## Longest Consecutive Sequence
+
+**Given an unsorted array of integers `nums`, return the length of the longest consecutive elements sequence.**
+
+Initial thought process:
+
+`nums = [100, 4, 200, 1, 3, 2]` -- the output for this array `nums` is 4. The problem wants us to pick out the longest consecutive sequence, which is relatively easy to understand as we've seen it before. We need to order the sequence, which can be done through the use of a hashset. If you have understood the 'Contains Duplicate' task, this is effectively much the same with a minor extension to it.
+
 
 
 
