@@ -23,6 +23,10 @@ hashset = set()
 hashset.add(x)
 ```
 
+Review:
+
+1 - I can now do this problem by reading my notes for the future.
+
 ## Valid Anagram 
 
 **Given two strings s and t, return true if t is an anagram of s, and false otherwise.**
@@ -104,6 +108,15 @@ Use a max heap, then pop k number of values from the heap. We use a bucket sort,
 
 ```
 
+## Product of Array Except Self
+
+Initial thought process:
+
+Use a hashmap, with keys being the index of the array, and the value being the product of all the values, except the index.
+
+Notes for future:
+
+We take the product of every value before the index chosen, and every value after it, then take their products. To do this, we make an output array, which includes the product of everything ahead of the index multiplied by the product of everything ahead of the index.
 
 
 
