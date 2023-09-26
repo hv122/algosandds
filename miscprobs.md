@@ -138,9 +138,26 @@ The initial thought process in this case is correct, but what we need to do is f
 
 Initial thought process:
 
-`nums = [100, 4, 200, 1, 3, 2]` -- the output for this array `nums` is 4. The problem wants us to pick out the longest consecutive sequence, which is relatively easy to understand as we've seen it before. We need to order the sequence, which can be done through the use of a hashset. If you have understood the 'Contains Duplicate' task, this is effectively much the same with a minor extension to it.
+`nums = [100, 4, 200, 1, 3, 2]` -- the output for this array `nums` is 4. The problem wants us to pick out the longest consecutive sequence, which is relatively easy to understand as we've seen it before. We need to order the sequence, which can be done through the use of a hashset. If you have understood the 'Contains Duplicate' task, this seems effectively much the same with a minor extension to it.
+
+Notes for future:
+
+This is a little bit more different from Contains Duplicate as I though initially. We construct the set directly from the `nums` array, using `numSet = set(nums)`. Iterate through the set, and check if it is the first value in a sequence, by looking for a value one less than it. If it is the first value, set `length = 0`, and increase its' value until a number one higher than it is not found. Finally take the max of `length` and `longest`, returning the answer.
 
 
+## Two Sum II - Input Array is Sorted
 
+**Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 < numbers.length.**
 
+Initial thought process:
+
+Things to note from the task:
+
+The array is one-indexed, so we need to add one to the actual index in the array when returning our values to the user. The array has also been sorted in increasing order. We cannot discard values greater than the target in the array, as there could benegative values present. Using a left and right pointer. Have the left pointer be stationary, testing its sum with the right pointer. We can't use the same number twice, so the right pointer needs to avoid the index of the left pointer.
+
+Notes for future:
+
+The final issue of avoiding the left pointer should be resolved by iterating through the array from either side. Noted that for two pointer questions, this is typically done using a `while l<r` loop rather than a range-based for loop. This specific question definitely contains a solution, but if it didn't, we could simply return -1 if the solution is not found, which would be simple with the while loop.
+
+We don't keep the left pointer stationary - if the value is less than the target, we move the left pointer higher, if the value is greater, we move the right pointer lower.
 
