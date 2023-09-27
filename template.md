@@ -157,3 +157,21 @@ The final issue of avoiding the left pointer should be resolved by iterating thr
 
 We don't keep the left pointer stationary - if the value is less than the target, we move the left pointer higher, if the value is greater, we move the right pointer lower.
 
+## 3 Sum - Medium
+
+**Given an integer array `nums`, return all the triplets `[nums[i], nums[j], nums[k]` such that `i != j, i != k, and j != k`, and `nums[i] + nums[j] + nums[k] == 0`.**
+
+
+Initial thought process:
+
+This is a two pointer problem, but I was trying to almost copy the Two Sum solution, and just move the middle and left/right pointer simultaneously like we did before. I should fix the third (middle) pointer, but I'm not sure the best method to do this.
+
+Notes for future:
+
+The middle pointer issue is resolved with an outer loop, namely `for i in range(len(nums) - 2)` and we use a `break` statement, which is activated if the value in the middle pointer location is greater than zero. As the requirements state all the values must be different, all the triplet solutions must have at least one value smaller than zero, and if only one value is smaller than zero, the other value has to be zero.
+
+![Code Snippet for 3Sum](./3sumsolns.jpg)
+
+^^ Code Snippet for 3Sum
+
+## New Problem - Medium
