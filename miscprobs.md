@@ -178,4 +178,19 @@ The middle pointer issue is resolved with an outer loop, namely `for i in range(
 
 ^^ Code Snippet for 3Sum
 
-## New Problem - Medium
+## Container with Most Water - Medium
+
+**You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]). Find two lines that together with the x-axis form a container, such that the container contains the most water. Return the maximum amount of water a container can store.**
+
+Initial thought process:
+
+We need to calculate the area of the container by multiplying the difference in the positions by the shortest value pointed to. We update a maximum area variable when a value greater than it is found. Return the maximum value.
+
+Notes for future:
+
+Remember Python contains max and min functions built in, so that we don't need to use if statements to update the maximum area. I remembered this to select the smaller of the two positions, but not when updating the area. 
+
+When doing two pointer problems, always go from the left and the right, we move through the data structure simultaneously from either side, allowing for the use of a while loop, instead of 2 for loops. 
+
+*More simply, keep in mind, `while l < r`, and update them `+=1` or `-=1` as necessary :).*
+
